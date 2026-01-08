@@ -1,0 +1,5 @@
+@layer theme {
+	@theme static {
+		--breakpoint-xs: 30rem;
+	}
+}

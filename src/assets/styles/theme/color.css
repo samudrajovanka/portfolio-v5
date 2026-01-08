@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@layer theme {
+	@theme static {
+		--color-text-black: #061e29;
+		--color-text-white: #ffffff;
+		--color-main: #244bab;
+		--color-dark: #070e1e;
+		--color-light-subtitle: var(--color-slate-500);
+		--color-dark-subtitle: var(--color-slate-400);
+	}
+}

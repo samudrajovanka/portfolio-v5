@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /resume
+
+Sitemap: https://www.jovan.id/sitemap.xml

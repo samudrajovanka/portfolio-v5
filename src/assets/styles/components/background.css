@@ -1,0 +1,14 @@
+@layer components {
+	.bg-grid {
+		background-image:
+			linear-gradient(to right, #8080801b 1px, transparent 1px),
+			linear-gradient(to bottom, #8080801b 1px, transparent 1px);
+		background-size: 36px 36px;
+
+		@media (prefers-color-scheme: dark) {
+			background-image:
+				linear-gradient(to right, #80808018 1px, transparent 1px),
+				linear-gradient(to bottom, #80808018 1px, transparent 1px);
+		}
+	}
+}

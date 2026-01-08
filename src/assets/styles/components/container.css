@@ -1,0 +1,26 @@
+@layer components {
+	.blurred-wrapper {
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background-color: rgba(255, 255, 255, 0.1);
+
+		--tw-shadow:
+			0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px
+			var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+		box-shadow:
+			var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+			var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+
+		--tw-backdrop-blur: blur(var(--blur-sm) /* 8px */);
+		-webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+		backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+
+		@variant dark {
+			border-color: color-mix(
+				in oklab,
+				var(--color-indigo-900) 50%,
+				transparent
+			);
+			background-color: color-mix(in oklab, var(--color-main) 5%, transparent);
+		}
+	}
+}
