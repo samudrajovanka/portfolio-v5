@@ -11,7 +11,7 @@ import app from '@/config/app';
 const HomePage = () => {
 	return (
 		<div className="fixed top-0 h-dvh w-dvw flex items-center">
-			<Container className="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
+			<Container className="flex flex-col items-center sm:items-start gap-2 text-center md:text-left">
 				<RevealWrapper useInitialDelay>
 					<Text
 						as="h1"

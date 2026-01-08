@@ -52,7 +52,7 @@ const Navbar = () => {
 					</motion.div>
 				</Link>
 
-				<ul className="hidden md:flex gap-6 items-center">
+				<ul className="hidden sm:flex gap-6 items-center">
 					{Menu.map((item, index) => {
 						const isActive =
 							item.href === '/'
@@ -99,7 +99,7 @@ const Navbar = () => {
 
 					<button
 						type="button"
-						className="md:hidden button-ghost--icon"
+						className="sm:hidden button-ghost--icon"
 						onClick={() => setIsOpenSidebar(true)}
 						aria-label="Open menu"
 					>

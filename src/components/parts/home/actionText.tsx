@@ -22,12 +22,12 @@ const ActionText = ({ delay = 0, className }: ActionTextProps) => {
 				delay={delay}
 				onFinish={() => setIsFinishTextGenerate(true)}
 			>
-				<br className="inline-block md:hidden" />
+				<br className="inline-block sm:hidden" />
 
 				{isFinishTextGenerate ? (
 					<FlipWords
 						words={['performance', 'modernity', 'interaction', 'impact']}
-						className="inline-block font-medium text-main _text-highlight"
+						className="inline-block font-medium text-main _text-highlight sm:ml-2"
 					/>
 				) : (
 					<span className="text-transparent">x</span>

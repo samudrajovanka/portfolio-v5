@@ -36,24 +36,26 @@ export const TextGenerateEffect = ({
 
 	const renderWords = () => {
 		return (
-			<motion.div ref={scope}>
-				{wordsArray.map((word, idx) => {
-					return (
-						<motion.span
-							// biome-ignore lint/suspicious/noArrayIndexKey: use index
-							key={word + idx}
-							className="opacity-0"
-							style={{
-								filter: filter ? 'blur(10px)' : 'none',
-							}}
-						>
-							{word}{' '}
-						</motion.span>
-					);
-				})}
+			<div>
+				<motion.div ref={scope} className="inline-block">
+					{wordsArray.map((word, idx) => {
+						return (
+							<motion.span
+								// biome-ignore lint/suspicious/noArrayIndexKey: use index
+								key={word + idx}
+								className="opacity-0"
+								style={{
+									filter: filter ? 'blur(10px)' : 'none',
+								}}
+							>
+								{word}{' '}
+							</motion.span>
+						);
+					})}
+				</motion.div>
 
 				{children}
-			</motion.div>
+			</div>
 		);
 	};
 
