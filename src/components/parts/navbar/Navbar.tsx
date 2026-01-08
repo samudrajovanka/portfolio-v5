@@ -13,8 +13,9 @@ import logo from '@/public/images/logo.webp';
 import { Menu } from './data';
 import MobileSidebar from './MobileSidebar';
 import ThemeToggle from './ThemeToggle';
+import type { NavbarProps } from './types';
 
-const Navbar = () => {
+const Navbar = ({ position = 'sticky' }: NavbarProps) => {
 	const pathname = usePathname();
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isOpenSidebar, setIsOpenSidebar] = useState(false);
@@ -29,7 +30,12 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<nav className={cn('sticky top-2 mb-6 z-50 transition-all duration-300')}>
+		<nav
+			className={cn(
+				'inset-x-0 mt-2 mb-6 z-50 transition-all duration-300',
+				position,
+			)}
+		>
 			<Container
 				className={cn(
 					'flex items-center gap-6 px-4 py-3 transition-all duration-300 rounded-xl',

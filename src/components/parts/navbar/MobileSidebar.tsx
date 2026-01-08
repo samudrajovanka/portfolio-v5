@@ -4,6 +4,7 @@ import { X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
 import Container from '@/components/ui/container';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
 import { cn } from '@/lib/utils';
@@ -15,6 +16,20 @@ export default function MobileSidebar({
 	setIsOpen,
 }: MobileSidebarProps) {
 	const pathname = usePathname();
+
+	useEffect(() => {
+		const mainLayout = document.getElementById('main-layout');
+
+		if (!mainLayout) return;
+
+		if (isOpen) {
+			mainLayout.style.overflow = 'hidden';
+			mainLayout.style.translate = '-75% 0';
+		} else {
+			mainLayout.style.overflow = 'auto';
+			mainLayout.style.translate = '0 0';
+		}
+	}, [isOpen]);
 
 	return (
 		<AnimatePresence>

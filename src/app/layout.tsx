@@ -1,5 +1,5 @@
 import { outfit } from '@/assets/fonts';
-import Navbar from '@/components/parts/navbar/Navbar';
+import NavbarLayout from '@/components/parts/navbar/NavbarLayout';
 import PreloadPage from '@/components/parts/preloadPage/PreloadPage';
 import JsonLd from '@/components/parts/schema/JsonLd';
 import SocialRail from '@/components/parts/socialMedia/SocialRail';
@@ -21,13 +21,15 @@ export default function RootLayout({
 				<GlobalProvider>
 					<JsonLd />
 
-					<PreloadPage>
+					<PreloadPage noPreload>
 						<div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-[#F7F7F7] dark:bg-dark mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 						<div className="relative">
-							<Navbar />
+							<NavbarLayout />
 							<SocialRail />
 
-							<main>{children}</main>
+							<main id="main-layout" className="transition-all duration-300">
+								{children}
+							</main>
 						</div>
 					</PreloadPage>
 				</GlobalProvider>
