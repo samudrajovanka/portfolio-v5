@@ -2,10 +2,10 @@
 
 import { X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import Container from '@/components/ui/container';
+import Link from '@/components/ui/link';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
 import { cn } from '@/lib/utils';
 import { Menu } from './data';
@@ -78,6 +78,7 @@ export default function MobileSidebar({
 												<Link
 													href={item.href}
 													onClick={() => setIsOpen(false)}
+													isExternal={item.isExternal}
 													className={cn(
 														'block text-lg transition-colors text-light-subtitle dark:text-dark-subtitle hover:text-main dark:hover:text-white',
 														{

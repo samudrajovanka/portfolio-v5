@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import ActionText from '@/components/parts/home/actionText';
 import { socialLinks } from '@/components/parts/socialMedia/data';
 import { ButtonBorderBeam } from '@/components/ui/buttonBorderBeam';
 import Container from '@/components/ui/container';
 import { Dock, DockIcon } from '@/components/ui/dock';
+import Link from '@/components/ui/link';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
 import { Text } from '@/components/ui/text';
 import app from '@/config/app';
@@ -46,9 +46,9 @@ const HomePage = () => {
 						key={link.href}
 						className="text-light-subtitle dark:text-dark-subtitle dark:hover:text-white hover:text-main hover:_text-highlight"
 					>
-						<a href={link.href} target="_blank" rel="noopener noreferrer">
+						<Link href={link.href} isExternal>
 							{link.icon}
-						</a>
+						</Link>
 					</DockIcon>
 				))}
 			</Dock>

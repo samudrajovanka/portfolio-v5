@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 export default function ThemeToggle() {
-	const { theme, setTheme } = useTheme();
+	const { setTheme, resolvedTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
@@ -18,7 +18,7 @@ export default function ThemeToggle() {
 		return <div className="size-9" />;
 	}
 
-	const isDark = theme === 'dark';
+	const isDark = resolvedTheme === 'dark';
 
 	const toggleTheme = async (e: React.MouseEvent<HTMLButtonElement>) => {
 		const newTheme = isDark ? 'light' : 'dark';

@@ -3,10 +3,10 @@
 import { MenuIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Container from '@/components/ui/container';
+import Link from '@/components/ui/link';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
 import { cn } from '@/lib/utils';
 import logo from '@/public/images/logo.webp';
@@ -70,6 +70,7 @@ const Navbar = ({ position = 'sticky' }: NavbarProps) => {
 								<RevealWrapper delay={index * 0.1} useInitialDelay>
 									<Link
 										href={item.href}
+										isExternal={item.isExternal}
 										className={cn(
 											'relative z-10 transition-colors text-light-subtitle dark:text-dark-subtitle hover:text-main dark:hover:text-white',
 											{

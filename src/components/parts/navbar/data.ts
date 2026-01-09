@@ -8,8 +8,9 @@ export const Menu = [
 		label: 'Projects',
 	},
 	{
-		href: '/blogs',
+		href: 'https://blogs.jovan.id',
 		label: 'Blogs',
+		isExternal: true,
 	},
 	{
 		href: '/about',
