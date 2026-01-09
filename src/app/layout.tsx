@@ -21,7 +21,7 @@ export default function RootLayout({
 				<GlobalProvider>
 					<JsonLd />
 
-					<PreloadPage noPreload>
+					<PreloadPage>
 						<div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-[#F7F7F7] dark:bg-dark mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 						<div className="relative">
 							<NavbarLayout />
