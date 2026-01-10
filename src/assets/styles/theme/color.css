@@ -6,7 +6,7 @@
 		--color-text-white: #ffffff;
 		--color-main: #244bab;
 		--color-dark: #070e1e;
-		--color-light-subtitle: var(--color-slate-500);
+		--color-light-subtitle: var(--color-slate-600);
 		--color-dark-subtitle: var(--color-slate-400);
 	}
 }

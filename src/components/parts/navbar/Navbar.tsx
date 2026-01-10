@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { Button } from '@/components/ui/button';
 import Container from '@/components/ui/container';
 import Link from '@/components/ui/link';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
@@ -104,14 +105,16 @@ const Navbar = ({ position = 'sticky' }: NavbarProps) => {
 				<div className="ml-auto flex items-center gap-4">
 					<ThemeToggle />
 
-					<button
+					<Button
 						type="button"
-						className="sm:hidden button-ghost--icon"
-						onClick={() => setIsOpenSidebar(true)}
+						variant="secondary"
+						size="icon"
+						className="sm:hidden"
 						aria-label="Open menu"
+						onClick={() => setIsOpenSidebar(true)}
 					>
 						<MenuIcon className="size-5" />
-					</button>
+					</Button>
 				</div>
 			</Container>
 

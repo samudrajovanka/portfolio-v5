@@ -5,9 +5,9 @@ import Navbar from './Navbar';
 
 const NavbarLayout = () => {
 	const segment = useSelectedLayoutSegment();
-	const isHome = segment === null;
+	const isFixedNavbarPage = segment === null || ['projects'].includes(segment);
 
-	return <Navbar position={isHome ? 'fixed' : 'sticky'} />;
+	return <Navbar position={isFixedNavbarPage ? 'fixed' : 'sticky'} />;
 };
 
 export default NavbarLayout;

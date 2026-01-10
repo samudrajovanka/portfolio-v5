@@ -1,7 +1,11 @@
 import app from '@/config/app';
 
-export default function JsonLd() {
-	const jsonLd = {
+interface JsonLdProps {
+	data?: Record<string, unknown>;
+}
+
+export default function JsonLd({ data }: JsonLdProps) {
+	const jsonLd = data ?? {
 		'@context': 'https://schema.org',
 		'@type': 'WebSite',
 		name: app.name,

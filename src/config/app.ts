@@ -1,5 +1,5 @@
 const app = {
-	name: 'jovan.id',
+	name: 'Jovanka Samudra',
 	description:
 		"Hello, I'm Jovanka Samudra. Let's connect and collaborate on building something amazing together!",
 	keywords: ['jovan', 'samudra', 'jovanka', 'samudrajovanka'],

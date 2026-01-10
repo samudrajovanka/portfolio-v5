@@ -4,6 +4,7 @@ import { X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
+import { Button } from '@/components/ui/button';
 import Container from '@/components/ui/container';
 import Link from '@/components/ui/link';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
@@ -51,14 +52,14 @@ export default function MobileSidebar({
 					>
 						<Container>
 							<div className="flex justify-end mb-8">
-								<button
-									type="button"
-									onClick={() => setIsOpen(false)}
-									className="button-ghost--icon"
+								<Button
+									variant="secondary"
+									size="icon"
 									aria-label="Close menu"
+									onClick={() => setIsOpen(false)}
 								>
 									<X className="size-5" />
-								</button>
+								</Button>
 							</div>
 
 							<ul className="flex flex-col gap-6">

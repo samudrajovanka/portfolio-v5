@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
+import { Button } from '@/components/ui/button';
 
 export default function ThemeToggle() {
 	const { setTheme, resolvedTheme } = useTheme();
@@ -61,11 +62,10 @@ export default function ThemeToggle() {
 	};
 
 	return (
-		<motion.button
-			whileHover={{ scale: 1.05 }}
-			whileTap={{ scale: 0.95 }}
+		<Button
 			onClick={toggleTheme}
-			className="relative button-ghost--icon"
+			variant="secondary"
+			size="icon"
 			aria-label="Toggle theme"
 		>
 			<motion.div
@@ -95,6 +95,6 @@ export default function ThemeToggle() {
 			</motion.div>
 
 			<div className="size-5 opacity-0" />
-		</motion.button>
+		</Button>
 	);
 }
