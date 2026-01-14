@@ -6,13 +6,12 @@ import { Dock, DockIcon } from '@/components/ui/dock';
 import Link from '@/components/ui/link';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
 import { Text } from '@/components/ui/text';
-import app from '@/config/app';
 
 const HomePage = () => {
 	return (
 		<div className="h-dvh w-dvw flex items-center">
 			<Container className="flex flex-col items-center sm:items-start gap-2 text-center md:text-left">
-				<RevealWrapper useInitialDelay>
+				<RevealWrapper>
 					<Text
 						as="h1"
 						resetTypography
@@ -22,7 +21,7 @@ const HomePage = () => {
 					</Text>
 				</RevealWrapper>
 
-				<RevealWrapper delay={0.2} useInitialDelay>
+				<RevealWrapper delay={0.2}>
 					<Text
 						resetTypography
 						className="text-2xl xs:text-3xl sm:text-4xl md:text-3xl font-medium mb-5"
@@ -31,16 +30,16 @@ const HomePage = () => {
 					</Text>
 				</RevealWrapper>
 
-				<ActionText delay={app.initialDelayTimeAfterPreload + 0.4} />
+				<ActionText delay={0.4} />
 
-				<RevealWrapper delay={0.6} useInitialDelay>
+				<RevealWrapper delay={0.6}>
 					<Link href="/projects" className="inline-block mt-5">
 						<ButtonBorderBeam>See What I&apos;ve Built</ButtonBorderBeam>
 					</Link>
 				</RevealWrapper>
 			</Container>
 
-			<Dock className="fixed md:hidden bottom-5 right-1/2 translate-x-1/2 z-50">
+			<Dock className="fixed lg:hidden bottom-5 right-1/2 translate-x-1/2 z-50">
 				{socialLinks.map((link) => (
 					<DockIcon
 						key={link.href}

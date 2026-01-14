@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'motion/react';
-import app from '@/config/app';
 import { cn } from '@/lib/utils';
 import type { RevealWrapperProps } from './revealWrapper.types';
 
@@ -9,11 +8,10 @@ const RevealWrapper = ({
 	children,
 	className,
 	delay = 0,
-	duration = 0.5,
+	duration = 0.8,
 	yOffset = 20,
 	xOffset = 0,
 	blur = false,
-	useInitialDelay,
 	...props
 }: RevealWrapperProps) => {
 	return (
@@ -28,9 +26,7 @@ const RevealWrapper = ({
 			viewport={{ once: true, margin: '-50px', amount: 0.1 }}
 			transition={{
 				duration,
-				delay: useInitialDelay
-					? app.initialDelayTimeAfterPreload + delay
-					: delay,
+				delay,
 				ease: 'easeOut',
 			}}
 			className={cn(className)}

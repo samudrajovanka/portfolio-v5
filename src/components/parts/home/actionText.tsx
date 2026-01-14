@@ -12,7 +12,7 @@ const ActionText = ({ delay = 0, className }: ActionTextProps) => {
 	return (
 		<div
 			className={cn(
-				'font-light text-lg xs:text-xl sm:text-2xl md:text-3xl',
+				'font-light text-lg xs:text-xl sm:text-2xl lg:text-3xl',
 				className,
 			)}
 		>

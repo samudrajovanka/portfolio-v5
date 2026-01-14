@@ -19,13 +19,12 @@ import type { ProjectCardProps } from './types';
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
 	const isEven = index % 2 === 0;
-	const isFirst = index === 0;
 
 	return (
 		<section className="h-dvh w-full snap-start shrink-0 flex items-center justify-center relative overflow-hidden text-black dark:text-white transition-colors duration-500">
 			<Container className="relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
 				<div className="flex-1 space-y-2 md:space-y-8 text-center md:text-left">
-					<RevealWrapper delay={0.2} useInitialDelay={isFirst}>
+					<RevealWrapper delay={0.2}>
 						<div className="relative inline-block">
 							<Text
 								className="absolute -left-8 -top-8 md:-top-16 text-6xl md:text-8xl font-bold opacity-10 dark:opacity-5 blur-[2px] md:blur-xs pointer-events-none select-none text-slate-500"
@@ -36,8 +35,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 							</Text>
 							<Text
 								as="h2"
-								resetTypography
-								className="text-3xl md:text-4xl font-bold tracking-tight relative z-10"
+								typography="heading"
+								className="tracking-tight relative z-10"
 							>
 								{project.title}
 							</Text>
@@ -45,7 +44,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 					</RevealWrapper>
 
 					<div className="min-h-20">
-						<RevealWrapper delay={0.4} useInitialDelay={isFirst}>
+						<RevealWrapper delay={0.4}>
 							<Text
 								typography="subheading"
 								color="subtitle"
@@ -58,7 +57,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
 					<RevealWrapper
 						delay={0.6}
-						useInitialDelay={isFirst}
 						className="flex flex-wrap gap-2 justify-center md:justify-start mt-8 md:mt-0 whitespace-nowrap items-center"
 					>
 						{project.stacks.map((stack) => (
@@ -68,7 +66,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
 					<RevealWrapper
 						delay={0.8}
-						useInitialDelay={isFirst}
 						className="flex flex-wrap items-center gap-4 justify-center md:justify-start mt-8 md:mt-0"
 					>
 						{project.link && (
@@ -117,7 +114,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
 				<RevealWrapper
 					delay={0.4}
-					useInitialDelay={isFirst}
 					xOffset={isEven ? 50 : -50}
 					className="flex-1 w-full max-w-lg md:max-w-xl aspect-video relative group hidden md:flex"
 				>

@@ -24,10 +24,9 @@ export default function MobileSidebar({
 		if (!mainLayout) return;
 
 		if (isOpen) {
-			mainLayout.style.overflow = 'hidden';
-			mainLayout.style.translate = '-75% 0';
+			mainLayout.style.translate =
+				'max(-75%, calc(var(--container-sm) * -1)) 0';
 		} else {
-			mainLayout.style.overflow = 'auto';
 			mainLayout.style.translate = '0 0';
 		}
 	}, [isOpen]);

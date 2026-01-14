@@ -2,19 +2,36 @@
 
 import { AnimatePresence, motion } from 'motion/react';
 import { Activity, useEffect, useState } from 'react';
+import app from '@/config/app';
 import { EncryptedText } from '../../ui/encrypted-text';
 import type { PreloadPageProps } from './types';
 
 const PreloadPage = ({ children, noPreload }: PreloadPageProps) => {
 	const [isLoading, setIsLoading] = useState(!noPreload);
+	const [isShowContent, setIsShowContent] = useState(!!noPreload);
 
 	useEffect(() => {
-		const timer = setTimeout(() => {
+		const timerId = setTimeout(() => {
 			setIsLoading(false);
 		}, 2000);
 
-		return () => clearTimeout(timer);
+		return () => clearTimeout(timerId);
 	}, []);
+
+	useEffect(() => {
+		if (noPreload) {
+			setIsShowContent(true);
+			return;
+		}
+
+		if (!isLoading) {
+			const timerId = setTimeout(() => {
+				setIsShowContent(true);
+			}, app.initialDelayTimeAfterPreload);
+
+			return () => clearTimeout(timerId);
+		}
+	}, [isLoading, noPreload]);
 
 	return (
 		<>
@@ -36,7 +53,7 @@ const PreloadPage = ({ children, noPreload }: PreloadPageProps) => {
 			</Activity>
 
 			<AnimatePresence mode="wait">
-				{!isLoading && (
+				<Activity mode={isShowContent ? 'visible' : 'hidden'}>
 					<motion.div
 						key="content"
 						initial={{ opacity: 0 }}
@@ -46,7 +63,7 @@ const PreloadPage = ({ children, noPreload }: PreloadPageProps) => {
 					>
 						{children}
 					</motion.div>
-				)}
+				</Activity>
 			</AnimatePresence>
 		</>
 	);

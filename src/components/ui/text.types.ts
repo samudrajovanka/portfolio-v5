@@ -17,7 +17,7 @@ export type Typography =
 	| 'small'
 	| 'xsmall';
 
-type Color = 'subtitle' | 'normal';
+type Color = 'subtitle' | 'normal' | 'highlight';
 
 export type TextProps = React.PropsWithChildren<
 	Pick<React.HTMLAttributes<HTMLParagraphElement>, 'role'> & {

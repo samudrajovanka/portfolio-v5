@@ -20,7 +20,7 @@
 				var(--color-indigo-900) 50%,
 				transparent
 			);
-			background-color: color-mix(in oklab, var(--color-main) 5%, transparent);
+			background-color: color-mix(in oklab, var(--color-dark) 50%, transparent);
 		}
 	}
 }

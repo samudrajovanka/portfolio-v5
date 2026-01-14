@@ -6,5 +6,4 @@ export type RevealWrapperProps = HTMLMotionProps<'div'> & {
 	yOffset?: number;
 	xOffset?: number;
 	blur?: boolean;
-	useInitialDelay?: boolean;
 };

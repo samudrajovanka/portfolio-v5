@@ -3,11 +3,17 @@ import { cn } from '@/lib/utils';
 import type { TextProps, Typography } from './text.types';
 
 const typographyClassName: Record<Typography, string> = {
-	heading: 'text-xl md:text-2xl font-bold',
+	heading: 'text-3xl md:text-4xl font-bold',
 	subheading: 'text-lg md:text-xl font-bold',
-	regular: 'text-sm md:text-base',
+	regular: 'text-base md:text-lg',
 	small: 'text-xs md:text-sm',
 	xsmall: 'text-xs',
+};
+
+const colorClassName = {
+	normal: 'text-text-black dark:text-white',
+	subtitle: 'text-light-subtitle dark:text-dark-subtitle',
+	highlight: 'text-main dark:text-white _text-highlight',
 };
 
 const Text = ({
@@ -28,11 +34,6 @@ const Text = ({
 
 	const getColorClassName = (): string => {
 		if (resetColor) return '';
-
-		const colorClassName = {
-			normal: 'text-text-black dark:text-white',
-			subtitle: 'text-light-subtitle dark:text-dark-subtitle',
-		};
 
 		return colorClassName[color] ?? colorClassName.normal;
 	};

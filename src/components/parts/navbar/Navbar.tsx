@@ -33,7 +33,7 @@ const Navbar = ({ position = 'sticky' }: NavbarProps) => {
 	return (
 		<nav
 			className={cn(
-				'inset-x-0 mt-2 mb-6 z-50 transition-all duration-300',
+				'inset-x-0 top-2 mb-6 z-50 transition-all duration-300',
 				position,
 			)}
 		>
@@ -68,7 +68,7 @@ const Navbar = ({ position = 'sticky' }: NavbarProps) => {
 
 						return (
 							<li key={item.label} className="relative">
-								<RevealWrapper delay={index * 0.1} useInitialDelay>
+								<RevealWrapper delay={index * 0.1}>
 									<Link
 										href={item.href}
 										isExternal={item.isExternal}
