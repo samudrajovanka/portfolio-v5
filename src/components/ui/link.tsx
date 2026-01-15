@@ -1,19 +1,25 @@
 import { default as NextLink } from 'next/link';
+import { forwardRef } from 'react';
 import type { LinkProps } from './link.types';
 
-const Link = ({ href, isExternal, ...props }: LinkProps) => {
-	if (isExternal) {
-		return (
-			<a
-				href={href.toString()}
-				target="_blank"
-				rel="noopener noreferrer"
-				{...props}
-			/>
-		);
-	}
+const Link = forwardRef<HTMLAnchorElement, LinkProps>(
+	({ href, isExternal, ...props }, ref) => {
+		if (isExternal) {
+			return (
+				<a
+					ref={ref}
+					href={href.toString()}
+					target="_blank"
+					rel="noopener noreferrer"
+					{...props}
+				/>
+			);
+		}
 
-	return <NextLink href={href} {...props} />;
-};
+		return <NextLink ref={ref} href={href} {...props} />;
+	},
+);
+
+Link.displayName = 'Link';
 
 export default Link;

@@ -39,7 +39,7 @@ const Navbar = ({ position = 'sticky' }: NavbarProps) => {
 		>
 			<Container
 				className={cn(
-					'flex items-center gap-6 px-4 py-3 transition-all duration-300 rounded-xl',
+					'flex items-center gap-6 px-4 py-3 transition-all duration-300 rounded-3xl',
 					isScrolled ? 'blurred-wrapper' : 'border-transparent bg-transparent',
 				)}
 			>

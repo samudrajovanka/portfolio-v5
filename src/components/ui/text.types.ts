@@ -20,7 +20,7 @@ export type Typography =
 type Color = 'subtitle' | 'normal' | 'highlight';
 
 export type TextProps = React.PropsWithChildren<
-	Pick<React.HTMLAttributes<HTMLParagraphElement>, 'role'> & {
+	Pick<React.HTMLAttributes<HTMLParagraphElement>, 'role' | 'style'> & {
 		/**
 		 * @default 'p'
 		 */

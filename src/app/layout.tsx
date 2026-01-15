@@ -2,7 +2,7 @@ import { outfit } from '@/assets/fonts';
 import NavbarLayout from '@/components/parts/navbar/NavbarLayout';
 import PreloadPage from '@/components/parts/preloadPage/PreloadPage';
 import JsonLd from '@/components/parts/schema/JsonLd';
-import SocialRail from '@/components/parts/socialMedia/SocialRail';
+import SocialRailLayout from '@/components/parts/socialMedia/SocialRailLayout';
 import GlobalProvider from '@/components/providers/GlobalProvider';
 import generateMetadata from '@/lib/metadata';
 
@@ -25,7 +25,7 @@ export default function RootLayout({
 						<div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-[#F7F7F7] dark:bg-dark mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 						<div className="relative">
 							<NavbarLayout />
-							<SocialRail />
+							<SocialRailLayout />
 
 							<main id="main-layout" className="transition-all duration-300">
 								{children}

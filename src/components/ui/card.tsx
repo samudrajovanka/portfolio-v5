@@ -6,7 +6,7 @@ const Card = ({ children, className }: CardProps) => {
 	return (
 		<div
 			className={cn(
-				'card dark:bg-dark dark:border-indigo-900/50 overflow-hidden p-5 rounded-xl relative',
+				'card dark:bg-dark dark:border-indigo-900/50 overflow-hidden p-5 rounded-3xl relative',
 				className,
 			)}
 		>
