@@ -12,19 +12,19 @@ const Introduction = () => {
 			as="section"
 			className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center"
 		>
-			<RevealWrapper delay={0.2} className="flex justify-center md:justify-end">
+			<RevealWrapper className="flex justify-center md:justify-end">
 				<ProfilePicture />
 			</RevealWrapper>
 
 			<div>
-				<RevealWrapper delay={0.4}>
+				<RevealWrapper>
 					<Text as="h1" typography="heading" color="highlight">
 						Who I Am
 					</Text>
 				</RevealWrapper>
 
 				<div className="space-y-4 mt-6">
-					<RevealWrapper delay={0.6}>
+					<RevealWrapper>
 						<Text>
 							Hi there! I&apos;m{' '}
 							<AnimatedTooltip text="Call me Jovan">
@@ -36,7 +36,7 @@ const Introduction = () => {
 						</Text>
 					</RevealWrapper>
 
-					<RevealWrapper delay={0.8}>
+					<RevealWrapper>
 						<Text>
 							My journey in tech started around 2019, when I first discovered
 							how fun it was to make things work inside a browser. Since then,
@@ -45,7 +45,7 @@ const Introduction = () => {
 						</Text>
 					</RevealWrapper>
 
-					<RevealWrapper delay={1}>
+					<RevealWrapper>
 						<Text>
 							Outside the world of code, I&apos;m a longtime One Piece fan
 							counting down to its epic finale — a reminder that persistence,
