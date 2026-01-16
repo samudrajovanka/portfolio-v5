@@ -1,0 +1,7 @@
+@utility rounded-base {
+	border-radius: var(--radius-xl);
+
+	@media (width >= 768px) {
+		border-radius: var(--radius-3xl);
+	}
+}

@@ -11,7 +11,8 @@
 @import "./components/card.css" layer(components);
 
 /* utilities */
-@import "./utilities/text.css" layer(utilities);
+@import "./utilities/text.css";
+@import "./utilities/rounded.css";
 
 @custom-variant dark (&:is(.dark *));
 

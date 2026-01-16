@@ -43,7 +43,7 @@ const HomePage = () => {
 				{socialLinks.map((link) => (
 					<DockIcon
 						key={link.href}
-						className="text-light-subtitle dark:text-dark-subtitle dark:hover:text-white hover:text-main hover:_text-highlight"
+						className="text-light-subtitle dark:text-dark-subtitle dark:hover:text-white hover:text-main hover:custom-text-highlight"
 					>
 						<Link href={link.href} isExternal>
 							{link.icon}

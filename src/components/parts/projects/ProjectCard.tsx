@@ -98,7 +98,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 							>
 								<DialogTitle className="sr-only">{project.title}</DialogTitle>
 
-								<div className="relative w-full aspect-video rounded-3xl overflow-hidden bg-gray-900 z-1">
+								<div className="relative w-full aspect-video rounded-base overflow-hidden bg-gray-900 z-1">
 									<Image
 										src={project.image}
 										alt={project.title}
@@ -118,7 +118,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 					className="flex-1 w-full max-w-lg md:max-w-xl aspect-video relative group hidden md:flex"
 				>
 					<CometCard className="w-full h-full">
-						<div className="w-full h-full rounded-3xl bg-linear-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-800 overflow-hidden relative">
+						<div className="w-full h-full rounded-base bg-linear-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-800 overflow-hidden relative">
 							<Image
 								src={project.image}
 								alt={project.title}

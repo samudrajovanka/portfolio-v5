@@ -11,7 +11,7 @@ export default function SocialRail() {
 						<Link
 							href={link.href}
 							isExternal
-							className="block hover:-translate-y-1 hover:text-main hover:scale-110 transition-all duration-300 text-light-subtitle dark:text-dark-subtitle dark:hover:text-white hover:_text-highlight"
+							className="block hover:-translate-y-1 hover:text-main hover:scale-110 transition-all duration-300 text-light-subtitle dark:text-dark-subtitle dark:hover:text-white hover:custom-text-highlight"
 							aria-label={link.name}
 						>
 							{link.icon}

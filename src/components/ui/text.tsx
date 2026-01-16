@@ -13,7 +13,7 @@ const typographyClassName: Record<Typography, string> = {
 const colorClassName = {
 	normal: 'text-text-black dark:text-white',
 	subtitle: 'text-light-subtitle dark:text-dark-subtitle',
-	highlight: 'text-main dark:text-white _text-highlight',
+	highlight: 'text-main dark:text-white custom-text-highlight',
 };
 
 const Text = ({

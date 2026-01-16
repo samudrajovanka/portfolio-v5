@@ -27,7 +27,7 @@ const ActionText = ({ delay = 0, className }: ActionTextProps) => {
 				{isFinishTextGenerate ? (
 					<FlipWords
 						words={['performance', 'modernity', 'interaction', 'impact']}
-						className="inline-block font-medium text-main _text-highlight sm:ml-2"
+						className="inline-block font-medium text-main custom-text-highlight sm:ml-2"
 					/>
 				) : (
 					<span className="text-transparent">x</span>
