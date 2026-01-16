@@ -15,7 +15,7 @@ const Connect = () => {
 					<div className="absolute bottom-0 right-0 size-125 bg-pink-500 rounded-full filter blur-[100px] opacity-20 pointer-events-none translate-x-1/2 translate-y-1/2" />
 					<div className="absolute top-0 left-0 size-125 bg-indigo-500 rounded-full filter blur-[100px] opacity-20 pointer-events-none -translate-x-1/2 -translate-y-1/2" />
 					<div className="flex flex-col lg:flex-row items-center justify-between gap-10 md:gap-20 px-4 xs:px-8 md:px-10 w-full">
-						<div>
+						<div className="md:max-w-1/2">
 							<RevealWrapper>
 								<Text
 									as="h1"
@@ -41,7 +41,11 @@ const Connect = () => {
 								<RevealWrapper
 									key={social.name}
 									delay={idx * 0.1}
-									className={cn((idx + 1) % 3 === 0 && 'row-span-2')}
+									className={cn(
+										socialLinks.length % 2 !== 0 &&
+											(idx + 1) % 3 === 0 &&
+											'row-span-2',
+									)}
 								>
 									<Link
 										href={social.href}

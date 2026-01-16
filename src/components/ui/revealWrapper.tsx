@@ -23,7 +23,7 @@ const RevealWrapper = ({
 				filter: blur ? 'blur(4px)' : 'none',
 			}}
 			whileInView={{ opacity: 1, y: 0, x: 0, filter: 'blur(0px)' }}
-			viewport={{ once: true, margin: '-50px', amount: 0.1 }}
+			viewport={{ once: true, margin: '-20px', amount: 0.1 }}
 			transition={{
 				duration,
 				delay,

@@ -5,7 +5,7 @@ import type { TextProps, Typography } from './text.types';
 const typographyClassName: Record<Typography, string> = {
 	heading: 'text-3xl md:text-4xl font-bold',
 	subheading: 'text-lg md:text-xl font-bold',
-	regular: 'text-base md:text-lg',
+	regular: 'text-sm md:text-base',
 	small: 'text-xs md:text-sm',
 	xsmall: 'text-xs',
 };
