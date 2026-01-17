@@ -19,7 +19,7 @@ const WorkExperienceCard = ({
 				</Text>
 
 				{roles.length > 1 && (
-					<Text color="subtitle" className="font-bold">
+					<Text color="subtitle" className="font-medium">
 						{totalDuration}
 					</Text>
 				)}

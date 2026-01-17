@@ -26,6 +26,7 @@ const Connect = () => {
 								<Text
 									as="h1"
 									typography="heading"
+									color="highlight"
 									className="text-center lg:text-left"
 								>
 									Let&apos;s Connect
