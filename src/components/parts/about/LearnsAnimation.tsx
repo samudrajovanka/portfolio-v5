@@ -11,7 +11,7 @@ import type {
 
 const HEIGHT_ITEM = 32;
 const GAP = 16;
-const WIDTH_CONTAINER = 228;
+const WIDTH_CONTAINER = 212;
 const X_THRESHOLD = 20;
 const Y_THRESHOLD = 25;
 const TOTAL_ANIMATION = 3;
