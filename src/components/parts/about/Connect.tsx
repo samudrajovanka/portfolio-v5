@@ -62,7 +62,7 @@ const Connect = () => {
 						</div>
 
 						<RevealWrapper className="order-last md:order-3 w-full">
-							<div className="blurred-wrapper py-3 px-5 md:px-20 rounded-base flex flex-col md:flex-row justify-center items-center gap-2">
+							<div className="blurred-wrapper py-3 px-5 lg:px-20 rounded-base flex flex-col md:flex-row justify-center items-center gap-2">
 								<Text>Prefer details?</Text>
 								<Link href="/resume">
 									<Button variant="outline">
