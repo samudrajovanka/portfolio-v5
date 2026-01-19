@@ -4,6 +4,10 @@ export const Menu = [
 		label: 'Home',
 	},
 	{
+		href: '/about',
+		label: 'About',
+	},
+	{
 		href: '/projects',
 		label: 'Projects',
 	},
@@ -11,9 +15,5 @@ export const Menu = [
 		href: 'https://blogs.jovan.id',
 		label: 'Blogs',
 		isExternal: true,
-	},
-	{
-		href: '/about',
-		label: 'About',
 	},
 ];
