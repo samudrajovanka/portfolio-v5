@@ -26,6 +26,8 @@ const Navbar = ({ position = 'sticky' }: NavbarProps) => {
 			setIsScrolled(window.scrollY > 20);
 		};
 
+		handleScroll();
+
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
@@ -83,18 +85,7 @@ const Navbar = ({ position = 'sticky' }: NavbarProps) => {
 									</Link>
 
 									{isActive && (
-										<motion.div
-											layoutId="navbar-active"
-											className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-1 w-3 rounded-sm bg-main dark:bg-white"
-											initial={{ opacity: 0 }}
-											animate={{ opacity: 1 }}
-											exit={{ opacity: 0 }}
-											transition={{
-												type: 'spring',
-												stiffness: 350,
-												damping: 30,
-											}}
-										/>
+										<div className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-1 w-3 rounded-sm bg-main dark:bg-white" />
 									)}
 								</RevealWrapper>
 							</li>
