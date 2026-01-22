@@ -7,12 +7,14 @@ import Link from '@/components/ui/link';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
+import { useGetResumeQuery } from '@/query/resumes';
 import { useGetSocialMediasQuery } from '@/query/socialMedias';
 import QueryHandling from '../query/QueryHandling';
 import SocialMediaCard from '../socialMedia/SocialMediaCard';
 
 const Connect = () => {
 	const socialMediasQuery = useGetSocialMediasQuery();
+	const resumeQuery = useGetResumeQuery();
 
 	return (
 		<Container as="section">
@@ -71,17 +73,22 @@ const Connect = () => {
 							/>
 						</div>
 
-						<RevealWrapper className="order-last md:order-3 w-full">
-							<div className="blurred-wrapper py-3 px-5 lg:px-20 rounded-base flex flex-col md:flex-row justify-center items-center gap-2">
-								<Text>Prefer details?</Text>
-								<Link href="/resume">
-									<Button variant="outline">
-										<FileCode />
-										View my resume
-									</Button>
-								</Link>
-							</div>
-						</RevealWrapper>
+						<QueryHandling
+							queryResult={resumeQuery}
+							render={(resume) => (
+								<RevealWrapper className="order-last md:order-3 w-full">
+									<div className="blurred-wrapper py-3 px-5 lg:px-20 rounded-base flex flex-col md:flex-row justify-center items-center gap-2">
+										<Text>Prefer details?</Text>
+										<Link href={resume.url} isExternal>
+											<Button variant="outline">
+												<FileCode />
+												View my resume
+											</Button>
+										</Link>
+									</div>
+								</RevealWrapper>
+							)}
+						/>
 					</div>
 				</div>
 			</RevealWrapper>
