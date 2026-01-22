@@ -1,6 +1,6 @@
-import type { CompanyExperience } from '@/types/experiences';
+import type { GroupedExperience } from '@/types/experiences';
 
 export type WorkExperienceCardProps = {
-	experience: CompanyExperience;
+	experience: GroupedExperience;
 	className?: string;
 };

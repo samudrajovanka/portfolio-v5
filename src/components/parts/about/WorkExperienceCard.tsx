@@ -9,13 +9,13 @@ const WorkExperienceCard = ({
 	experience,
 	className,
 }: WorkExperienceCardProps) => {
-	const { companyName, totalDuration, roles } = experience;
+	const { company, totalDuration, roles } = experience;
 
 	return (
 		<Card className={className}>
 			<div className="flex flex-col md:flex-row md:items-center justify-between mb-4 bg-main/5 backdrop-blur-sm px-4 py-2 rounded-lg">
 				<Text as="h2" typography="subheading">
-					{companyName}
+					{company}
 				</Text>
 
 				{roles.length > 1 && (
@@ -54,7 +54,7 @@ const WorkExperienceCard = ({
 									</Text>
 								</div>
 
-								<div className="flex flex-wrap gap-x-2 gap-y-1 items-center">
+								<div className="flex flex-wrap gap-x-2 gap-y-1 items-center justify-end min-w-60">
 									<Text typography="small" color="subtitle">
 										{role.startDate} - {role.endDate}
 									</Text>
@@ -67,9 +67,9 @@ const WorkExperienceCard = ({
 								</div>
 							</div>
 
-							{role.techStack.length > 0 && (
+							{role.stacks.length > 0 && (
 								<div className="flex flex-wrap gap-2">
-									{role.techStack.map((tech) => (
+									{role.stacks.map((tech) => (
 										<Tag key={tech}>{tech}</Tag>
 									))}
 								</div>
