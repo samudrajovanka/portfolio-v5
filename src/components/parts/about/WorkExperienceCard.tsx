@@ -27,8 +27,10 @@ const WorkExperienceCard = ({
 
 			<div className="space-y-8 relative">
 				{roles.map((role, index) => (
-					// biome-ignore lint/suspicious/noArrayIndexKey: use key
-					<div key={index} className="relative flex flex-col md:flex-row gap-6">
+					<div
+						key={role._id}
+						className="relative flex flex-col md:flex-row gap-6"
+					>
 						{roles.length > 1 && (
 							<div className="hidden md:block">
 								<div className="size-3 rounded-full bg-slate-200 dark:bg-slate-800 mt-2 border-2 border-main z-2 relative" />

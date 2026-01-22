@@ -78,10 +78,9 @@ const WorkExperience = () => {
 						<div className={cn('transition-all duration-500', maskClass)}>
 							<RevealWrapper>
 								<CarouselContent className="-ml-2 md:-ml-4">
-									{experiences.map((experience, index) => (
+									{experiences.map((experience) => (
 										<CarouselItem
-											// biome-ignore lint/suspicious/noArrayIndexKey: use index as key
-											key={index}
+											key={experience.company}
 											className="pl-2 md:pl-4 basis-[93%] md:basis-[85%] lg:basis-[90%]"
 										>
 											<div className="p-1">

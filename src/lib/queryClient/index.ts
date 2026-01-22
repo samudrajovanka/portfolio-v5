@@ -1,7 +1,8 @@
 import { QueryClient } from '@tanstack/react-query';
 import { cache } from 'react';
+import app from '@/config/app';
 
-const STALE_TIME = 1000 * 60 * 5; // 5 minutes
+const STALE_TIME = 1000 * app.revalidate;
 
 export const queryClientConfig = {
 	defaultOptions: {
