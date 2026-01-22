@@ -1,43 +1,15 @@
+'use client';
+
+import QueryHandling from '@/components/parts/query/QueryHandling';
 import Container from '@/components/ui/container';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
 import { Text } from '@/components/ui/text';
+import { useGetLearnsQuery } from '@/query/learns';
 import LearnsAnimation from './LearnsAnimation';
-import type { Learn } from './LearnsAnimation.types';
-
-const learns: Learn[] = [
-	{
-		_id: '1',
-		name: 'HTML',
-		createdAt: '',
-		updatedAt: '',
-	},
-	{
-		_id: '2',
-		name: 'CSS',
-		createdAt: '',
-		updatedAt: '',
-	},
-	{
-		_id: '3',
-		name: 'JS',
-		createdAt: '',
-		updatedAt: '',
-	},
-	{
-		_id: '4',
-		name: 'React',
-		createdAt: '',
-		updatedAt: '',
-	},
-	{
-		_id: '5',
-		name: 'Next.js',
-		createdAt: '',
-		updatedAt: '',
-	},
-];
 
 const Learns = () => {
+	const learnsQuery = useGetLearnsQuery();
+
 	return (
 		<Container
 			as="section"
@@ -58,12 +30,17 @@ const Learns = () => {
 					</Text>
 				</RevealWrapper>
 
-				<RevealWrapper
-					delay={0.3}
-					className="md:bg-slate-100 md:dark:bg-slate-700 md:p-10 md:rounded-base md:w-100 md:rotate-3 md:shadow-2xl md:-translate-x-2 flex-1"
-				>
-					<LearnsAnimation learns={learns} />
-				</RevealWrapper>
+				<QueryHandling
+					queryResult={learnsQuery}
+					render={(learns) => (
+						<RevealWrapper
+							delay={0.3}
+							className="md:bg-slate-100 md:dark:bg-slate-700 md:p-10 md:rounded-base md:w-100 md:rotate-3 md:shadow-2xl md:-translate-x-2 flex-1"
+						>
+							<LearnsAnimation learns={learns} />
+						</RevealWrapper>
+					)}
+				/>
 			</div>
 		</Container>
 	);

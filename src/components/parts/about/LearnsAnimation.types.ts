@@ -1,9 +1,4 @@
-export type Learn = {
-	_id: string;
-	name: string;
-	createdAt: string;
-	updatedAt: string;
-};
+import type { Learn } from '@/types/learns';
 
 export type LearnsAnimationProps = {
 	learns: Learn[];
