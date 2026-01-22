@@ -17,7 +17,7 @@ export const metadata = generateMetadata(
 	{ withSuffix: true },
 );
 
-export const revalidate = app.revalidate;
+export const revalidate = 84_400; // 1 day
 
 export default async function Page() {
 	const queryClient = getQueryClient();

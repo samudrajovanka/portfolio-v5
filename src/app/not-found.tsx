@@ -8,7 +8,10 @@ export default function NotFound() {
 	return (
 		<Container className="flex flex-col items-center justify-center min-h-[70vh] gap-4 text-center">
 			<RevealWrapper>
-				<Text resetTypography className="text-7xl md:text-9xl font-bold text-main/20 dark:text-white/10 select-none">
+				<Text
+					resetTypography
+					className="text-7xl md:text-9xl font-bold text-main/20 dark:text-white/10 select-none"
+				>
 					404
 				</Text>
 			</RevealWrapper>
