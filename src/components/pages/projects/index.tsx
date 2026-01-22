@@ -9,10 +9,14 @@ import {
 import { useEffect, useRef } from 'react';
 import CommingSoonProject from '@/components/parts/projects/CommingSoonProject';
 import ProjectCard from '@/components/parts/projects/ProjectCard';
-import { gradients, projects } from './data';
+import QueryHandling from '@/components/parts/query/QueryHandling';
+import { useGetProjectsQuery } from '@/query/projects';
+import { gradients } from './data';
 
 const ProjectsPage = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
+	const projectsQuery = useGetProjectsQuery();
+	const { data: projects = [] } = projectsQuery;
 
 	const { scrollYProgress } = useScroll({
 		container: containerRef,
@@ -20,7 +24,7 @@ const ProjectsPage = () => {
 
 	const totalProjectsWithCommingSoon = projects.length + 1;
 	const inputs = Array.from({ length: totalProjectsWithCommingSoon }).map(
-		(_, i) => i / (totalProjectsWithCommingSoon - 1),
+		(_, i) => i / (totalProjectsWithCommingSoon - 1 || 1),
 	);
 
 	const xPositionGradient = useTransform(
@@ -67,9 +71,16 @@ const ProjectsPage = () => {
 				style={{ background }}
 			/>
 
-			{projects.map((project, index) => (
-				<ProjectCard key={project.title} project={project} index={index} />
-			))}
+			<QueryHandling
+				queryResult={projectsQuery}
+				render={(data) => (
+					<>
+						{data.map((project, index) => (
+							<ProjectCard key={project.name} project={project} index={index} />
+						))}
+					</>
+				)}
+			/>
 
 			<CommingSoonProject />
 		</div>

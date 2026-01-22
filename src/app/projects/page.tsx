@@ -1,28 +1,33 @@
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import ProjectsPage from '@/components/pages/projects';
-import { projects } from '@/components/pages/projects/data';
 import JsonLd from '@/components/parts/schema/JsonLd';
 import app from '@/config/app';
+import { getProjects } from '@/endpoints/projects';
 import generateMetadata from '@/lib/metadata';
+import { getQueryClient } from '@/lib/queryClient';
+import { getProjectsQueryKey } from '@/query/projects';
 
 export const metadata = generateMetadata(
 	{
 		title: 'My Projects',
 		description:
 			'Explore a collection of my latest projects, featuring web applications, design systems, and creative experiments.',
-		keywords: [
-			'projects',
-			'portfolio',
-			'web development',
-			'react',
-			'next.js',
-			'typescript',
-			'creative coding',
-		],
+		keywords: ['projects', 'portfolio', 'web development', 'creative coding'],
 	},
 	{ withSuffix: true },
 );
 
-export default function Page() {
+export const revalidate = app.revalidate;
+
+export default async function Page() {
+	const queryClient = getQueryClient();
+	const projectsData = await getProjects();
+
+	await queryClient.prefetchQuery({
+		queryKey: getProjectsQueryKey(),
+		queryFn: () => projectsData,
+	});
+
 	const jsonLd = {
 		'@context': 'https://schema.org',
 		'@type': 'CollectionPage',
@@ -30,19 +35,19 @@ export default function Page() {
 		description:
 			'Explore a collection of my latest projects, featuring web applications, design systems, and creative experiments.',
 		url: `${app.url}/projects`,
-		hasPart: projects.map((project) => ({
+		hasPart: projectsData.map((project) => ({
 			'@type': 'CreativeWork',
-			name: project.title,
+			name: project.name,
 			description: project.description,
 			url: `${app.url}/projects`,
-			image: project.image,
+			image: project.imageUrl,
 		})),
 	};
 
 	return (
-		<>
+		<HydrationBoundary state={dehydrate(queryClient)}>
 			<JsonLd data={jsonLd} />
 			<ProjectsPage />
-		</>
+		</HydrationBoundary>
 	);
 }

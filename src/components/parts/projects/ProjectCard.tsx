@@ -38,7 +38,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 								typography="heading"
 								className="tracking-tight relative z-10"
 							>
-								{project.title}
+								{project.name}
 							</Text>
 						</div>
 					</RevealWrapper>
@@ -68,16 +68,16 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 						delay={0.8}
 						className="flex flex-wrap items-center gap-4 justify-center md:justify-start mt-8 md:mt-0"
 					>
-						{project.link && (
-							<Link href={project.link} isExternal>
+						{project.projectUrl && (
+							<Link href={project.projectUrl} isExternal>
 								<Button size="lg">
 									<Globe className="size-4" />
 									Visit Site
 								</Button>
 							</Link>
 						)}
-						{project.github && (
-							<Link href={project.github} isExternal>
+						{project.repositoryUrl && (
+							<Link href={project.repositoryUrl} isExternal>
 								<Button size="lg" variant="outline">
 									<Github className="size-4" />
 									Source Code
@@ -96,12 +96,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 								showCloseButton={false}
 								className="p-0 border-none shadow-none bg-transparent"
 							>
-								<DialogTitle className="sr-only">{project.title}</DialogTitle>
+								<DialogTitle className="sr-only">{project.name}</DialogTitle>
 
 								<div className="relative w-full aspect-video rounded-base overflow-hidden bg-gray-900 z-1">
 									<Image
-										src={project.image}
-										alt={project.title}
+										src={project.imageUrl}
+										alt={project.name}
 										width={1600}
 										height={900}
 										className="object-cover w-full h-full"
@@ -120,8 +120,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 					<CometCard className="w-full h-full">
 						<div className="w-full h-full rounded-base bg-linear-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-800 overflow-hidden relative">
 							<Image
-								src={project.image}
-								alt={project.title}
+								src={project.imageUrl}
+								alt={project.name}
 								fill
 								className="object-cover"
 							/>

@@ -1,11 +1,4 @@
-export type Project = {
-	title: string;
-	description: string;
-	stacks: string[];
-	link?: string;
-	github?: string;
-	image: string;
-};
+import type { Project } from '@/types/projects';
 
 export type ProjectCardProps = {
 	project: Project;
