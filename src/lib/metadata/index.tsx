@@ -58,9 +58,6 @@ const generateMetadata = (
 			description,
 			images: [`${app.url}/images/logo.webp`],
 		},
-		alternates: {
-			canonical: app.url,
-		},
 	};
 
 	return metadataResult;
