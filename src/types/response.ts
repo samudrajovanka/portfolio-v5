@@ -1,5 +1,3 @@
-import type { PaginationMeta } from './pagination';
-
 export type ErrorGeneralResponse = {
 	success: false;
 	message: string;
@@ -14,7 +12,4 @@ export type SuccessGeneralResponse = {
 
 export type SuccessResponseData<SuccessData> = SuccessGeneralResponse & {
 	data: SuccessData;
-	meta?: {
-		pagination?: PaginationMeta;
-	};
 };

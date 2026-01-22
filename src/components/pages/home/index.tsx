@@ -1,13 +1,18 @@
+'use client';
+
 import ActionText from '@/components/parts/home/actionText';
-import { socialLinks } from '@/components/parts/socialMedia/data';
+import QueryHandling from '@/components/parts/query/QueryHandling';
 import { ButtonBorderBeam } from '@/components/ui/buttonBorderBeam';
 import Container from '@/components/ui/container';
 import { Dock, DockIcon } from '@/components/ui/dock';
 import Link from '@/components/ui/link';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
 import { Text } from '@/components/ui/text';
+import { useGetSocialMediasQuery } from '@/query/socialMedias';
 
 const HomePage = () => {
+	const socialMediasQuery = useGetSocialMediasQuery();
+
 	return (
 		<div className="h-dvh w-dvw flex items-center">
 			<Container className="flex flex-col items-center sm:items-start gap-2 text-center md:text-left">
@@ -39,18 +44,23 @@ const HomePage = () => {
 				</RevealWrapper>
 			</Container>
 
-			<Dock className="fixed lg:hidden bottom-5 right-1/2 translate-x-1/2 z-50">
-				{socialLinks.map((link) => (
-					<DockIcon
-						key={link.href}
-						className="text-light-subtitle dark:text-dark-subtitle dark:hover:text-white hover:text-main hover:custom-text-highlight"
-					>
-						<Link href={link.href} isExternal>
-							{link.icon}
-						</Link>
-					</DockIcon>
-				))}
-			</Dock>
+			<QueryHandling
+				queryResult={socialMediasQuery}
+				render={(socialMedias) => (
+					<Dock className="fixed lg:hidden bottom-5 right-1/2 translate-x-1/2 z-50">
+						{socialMedias.map((socialMedia) => (
+							<DockIcon
+								key={socialMedia.href}
+								className="text-light-subtitle dark:text-dark-subtitle dark:hover:text-white hover:text-main hover:custom-text-highlight"
+							>
+								<Link href={socialMedia.href} isExternal>
+									{socialMedia.icon}
+								</Link>
+							</DockIcon>
+						))}
+					</Dock>
+				)}
+			/>
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
-import type { socialLinks } from './data';
+import type { SocialMediaUI } from '@/types/socialMedias';
 
 export type SocialMediaCardProps = {
-	social: (typeof socialLinks)[number];
+	socialMedia: SocialMediaUI;
 	idx: number;
 };

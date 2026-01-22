@@ -46,7 +46,6 @@ const fetcherFactory = (baseUrl: string) => {
 			const response = await fetch(parseURL(finalUrl, args?.query), {
 				method,
 				headers,
-				cache: 'no-store',
 				...args,
 			});
 

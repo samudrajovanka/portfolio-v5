@@ -1,13 +1,21 @@
+'use client';
+
+import { QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ThemeProvider } from 'next-themes';
+import { useState } from 'react';
+import { getQueryClient } from '@/lib/queryClient';
 
-interface GlobalProviderProps {
-	children: React.ReactNode;
-}
+export default function GlobalProvider({ children }: React.PropsWithChildren) {
+	const [queryClient] = useState(getQueryClient());
 
-export default function GlobalProvider({ children }: GlobalProviderProps) {
 	return (
 		<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-			{children}
+			<QueryClientProvider client={queryClient}>
+				{children}
+
+				<ReactQueryDevtools />
+			</QueryClientProvider>
 		</ThemeProvider>
 	);
 }

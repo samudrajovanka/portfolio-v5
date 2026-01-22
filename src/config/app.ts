@@ -5,6 +5,7 @@ const app = {
 	keywords: ['jovan', 'samudra', 'jovanka', 'samudrajovanka'],
 	url: process.env.APP_URL ?? 'http://localhost:3000',
 	initialDelayTimeAfterPreload: 500,
+	revalidate: 60 * 60 * 24,
 };
 
 export default app;

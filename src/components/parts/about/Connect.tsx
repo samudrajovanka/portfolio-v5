@@ -7,10 +7,13 @@ import Link from '@/components/ui/link';
 import { RevealWrapper } from '@/components/ui/revealWrapper';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
-import { socialLinks } from '../socialMedia/data';
+import { useGetSocialMediasQuery } from '@/query/socialMedias';
+import QueryHandling from '../query/QueryHandling';
 import SocialMediaCard from '../socialMedia/SocialMediaCard';
 
 const Connect = () => {
+	const socialMediasQuery = useGetSocialMediasQuery();
+
 	return (
 		<Container as="section">
 			<RevealWrapper>
@@ -46,19 +49,26 @@ const Connect = () => {
 						</div>
 
 						<div className="grid grid-flow-col grid-rows-2 gap-3 sm:gap-4 items-center md:row-span-2 md:place-self-end">
-							{socialLinks.map((social, idx) => (
-								<RevealWrapper
-									key={social.name}
-									delay={idx * 0.1}
-									className={cn(
-										socialLinks.length % 2 !== 0 &&
-											(idx + 1) % 3 === 0 &&
-											'row-span-2',
-									)}
-								>
-									<SocialMediaCard social={social} idx={idx} />
-								</RevealWrapper>
-							))}
+							<QueryHandling
+								queryResult={socialMediasQuery}
+								render={(socialMedias) => (
+									<>
+										{socialMedias.map((socialMedia, idx) => (
+											<RevealWrapper
+												key={socialMedia.name}
+												delay={idx * 0.1}
+												className={cn(
+													socialMedias.length % 2 !== 0 &&
+														(idx + 1) % 3 === 0 &&
+														'row-span-2',
+												)}
+											>
+												<SocialMediaCard socialMedia={socialMedia} idx={idx} />
+											</RevealWrapper>
+										))}
+									</>
+								)}
+							/>
 						</div>
 
 						<RevealWrapper className="order-last md:order-3 w-full">

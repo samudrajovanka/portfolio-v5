@@ -3,10 +3,10 @@ import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 import type { SocialMediaCardProps } from './SocialMediaCard.types';
 
-const SocialMediaCard = ({ social, idx }: SocialMediaCardProps) => {
+const SocialMediaCard = ({ socialMedia, idx }: SocialMediaCardProps) => {
 	return (
 		<Link
-			href={social.href}
+			href={socialMedia.href}
 			isExternal
 			className={cn(
 				'group/social hover:scale-110 hover:rotate-2 inline-block transition-transform',
@@ -16,25 +16,25 @@ const SocialMediaCard = ({ social, idx }: SocialMediaCardProps) => {
 			<div
 				className="size-20 sm:size-24 lg:size-28 bg-slate-100 dark:bg-main/10 border-none rounded-base flex flex-col items-center justify-center gap-1"
 				style={{
-					backgroundColor: social.backgroundColor,
+					backgroundColor: socialMedia.backgroundColor,
 				}}
 			>
 				<span
 					className="translate-y-2.5 group-hover/social:translate-y-0 transition-all duration-500"
 					style={{
-						color: social.textColor,
+						color: socialMedia.textColor,
 					}}
 				>
-					{social.icon}
+					{socialMedia.icon}
 				</span>
 				<Text
 					typography="xsmall"
 					className="opacity-0 group-hover/social:opacity-100 transition-all duration-500 delay-100"
 					style={{
-						color: social.textColor,
+						color: socialMedia.textColor,
 					}}
 				>
-					{social.name}
+					{socialMedia.name}
 				</Text>
 			</div>
 		</Link>
