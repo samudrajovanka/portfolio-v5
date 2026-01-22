@@ -59,7 +59,7 @@ const WorkExperience = () => {
 						}}
 					>
 						<RevealWrapper className="flex gap-6 justify-between items-center mb-6">
-							<Text as="h1" typography="heading" color="highlight">
+							<Text as="h2" typography="heading" color="highlight">
 								Where I&apos;ve Worked
 							</Text>
 

@@ -1,5 +1,6 @@
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import AboutPage from '@/components/pages/about';
+import JsonLd from '@/components/parts/schema/JsonLd';
 import app from '@/config/app';
 import { getExperiences } from '@/endpoints/experiences';
 import { getLearns } from '@/endpoints/learns';
@@ -35,8 +36,22 @@ export default async function Page() {
 		}),
 	]);
 
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'ProfilePage',
+		dateCreated: new Date().toISOString(),
+		dateModified: new Date().toISOString(),
+		mainEntity: {
+			'@type': 'Person',
+			name: 'Jovanka Samudra',
+			identifier: 'jovankasamudra',
+			image: `${app.url}/images/logo.webp`,
+		},
+	};
+
 	return (
 		<HydrationBoundary state={dehydrate(queryClient)}>
+			<JsonLd data={jsonLd} />
 			<AboutPage />
 		</HydrationBoundary>
 	);
