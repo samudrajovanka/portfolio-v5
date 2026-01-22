@@ -1,5 +1,6 @@
 import { motion, type Variants } from 'motion/react';
 import Image from 'next/image';
+import profileImage from '@/public/images/profile.webp'
 
 const morphingBlob: Variants = {
 	animate: {
@@ -48,7 +49,7 @@ const ProfilePicture = () => {
 				}}
 			>
 				<Image
-					src="/images/profile.webp"
+					src={profileImage}
 					alt="Jovan Profile"
 					fill
 					className="object-cover grayscale-[0.7] hover:grayscale-0 transition-all duration-500"

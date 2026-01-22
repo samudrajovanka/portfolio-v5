@@ -6,6 +6,7 @@ import {
 	type LucideIcon,
 	Mail,
 	Youtube,
+	BookOpen
 } from 'lucide-react';
 
 export const SOCIAL_MEDIA_KEYS = [
@@ -27,7 +28,7 @@ export const SOCIAL_MEDIA_ICONS: Record<SocialMediaKey, LucideIcon> = {
 	EMAIL: Mail,
 	DRIBBBLE: Dribbble,
 	YOUTUBE: Youtube,
-	MEDIUM: Mail,
+	MEDIUM: BookOpen,
 };
 
 export const SOCIAL_MEDIA_NAMES: Record<SocialMediaKey, string> = {
