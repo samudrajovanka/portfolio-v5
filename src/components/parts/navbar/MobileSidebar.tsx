@@ -66,7 +66,8 @@ export default function MobileSidebar({
 									const isActive =
 										item.href === '/'
 											? pathname === '/'
-											: pathname.startsWith(item.href);
+											: pathname === item.href ||
+												pathname.startsWith(`${item.href}/`);
 
 									return (
 										<li key={item.label}>
