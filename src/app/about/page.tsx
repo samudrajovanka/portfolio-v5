@@ -12,7 +12,12 @@ import { getLearnsQueryKey } from '@/query/learns';
 import { getResumeQueryKey } from '@/query/resumes';
 
 export const metadata = generateMetadata(
-	{ title: 'About Me' },
+	{
+		title: 'About Me',
+		alternates: {
+			canonical: `${app.url}/about`,
+		},
+	},
 	{ withSuffix: true },
 );
 

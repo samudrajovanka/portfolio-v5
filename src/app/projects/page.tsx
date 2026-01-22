@@ -13,6 +13,9 @@ export const metadata = generateMetadata(
 		description:
 			'Explore a collection of my latest projects, featuring web applications, design systems, and creative experiments.',
 		keywords: ['projects', 'portfolio', 'web development', 'creative coding'],
+		alternates: {
+			canonical: `${app.url}/projects`,
+		},
 	},
 	{ withSuffix: true },
 );
