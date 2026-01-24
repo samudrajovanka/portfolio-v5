@@ -56,7 +56,7 @@ const WorkExperienceCard = ({
 									</Text>
 								</div>
 
-								<div className="flex flex-wrap gap-x-2 gap-y-1 items-center justify-end min-w-60">
+								<div className="flex flex-wrap gap-x-2 gap-y-1 items-center md:justify-end min-w-60">
 									<Text typography="small" color="subtitle">
 										{role.startDate} - {role.endDate}
 									</Text>
