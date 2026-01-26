@@ -1,4 +1,5 @@
 import {
+	BookOpen,
 	Dribbble,
 	Github,
 	Instagram,
@@ -6,7 +7,6 @@ import {
 	type LucideIcon,
 	Mail,
 	Youtube,
-	BookOpen
 } from 'lucide-react';
 
 export const SOCIAL_MEDIA_KEYS = [

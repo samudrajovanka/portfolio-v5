@@ -1,6 +1,6 @@
 import { motion, type Variants } from 'motion/react';
 import Image from 'next/image';
-import profileImage from '@/public/images/profile.webp'
+import profileImage from '@/public/images/profile.webp';
 
 const morphingBlob: Variants = {
 	animate: {
